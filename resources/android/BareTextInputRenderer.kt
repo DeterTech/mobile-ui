@@ -147,6 +147,7 @@ object BareTextInputRenderer {
                     else -> theme.primary
                 }
             ),
+            visualTransformation = props.visualTransformation,
             singleLine = props.singleLine,
             // Line limits were parsed (and defaulted: 5 for multiline) in
             // parseTextInputProps but never forwarded here, so a multiline
