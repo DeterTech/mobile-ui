@@ -278,10 +278,10 @@ struct NUIScaledFontModifier: ViewModifier {
         // font get the trait from the caller's `Text.italic()`.
         if let name = effectiveFontName, let custom = NativeUIFontResolver.font(name, size: size) {
             if italic, NativeUIFontResolver.needsSyntheticOblique(name) {
-                content.font(custom.weight(weight))
+                content.font(custom)
                     .transformEffect(NativeUIFontResolver.obliqueTransform(name, size: size))
             } else {
-                content.font(custom.weight(weight))
+                content.font(custom)
             }
         } else {
             content.font(.system(size: size, weight: weight, design: design))
